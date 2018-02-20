@@ -1,0 +1,54 @@
+---
+title: "fars_functions"
+author: "revirier"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This is an test vignete for the package fars_functions of the Coursera Building R Packages
+
+## Funcions
+
+The fars_functions package contains some functions to read FARS files, summarize and plot the data
+
+The functions included are:
+ 
+ * fars_read  This simple function read a FARS datafile located in the default directory
+ * fars_read_years Filter the FARS data for the years passed as a list and return a dataframe with two columns: MONTH and YEAR
+ * fars_summarize_years Summarize the rows of FARS data by year and month
+ * fars_map_state Show a plot a map with the year's accidents in a state
+ 
+## Example
+
+For example to load a far file we can use the fars_read funcion:
+
+```{r}
+require(testpackage)
+fars_read("../data/accident_2013.csv.bz2")
+```
+
+Summarize the data with the fars_summarize_years function
+
+```{r}
+require(dplyr)
+
+fars_summarize_years(c("2013"))
+```
+
+And plot a map with the accidents:
+
+```{r}
+fars_map_state(10,2013)
+```
+
