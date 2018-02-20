@@ -4,7 +4,7 @@ The goal of testpackage is to learn the use of packages
 
 ## Example
 
-This is a basic example which shows you how to summarize and polt FARS data
+This is a basic example which shows you how to summarize and plot FARS data
 
 ``` r
 fars_read("../data/accident_2013.csv.bz2")
