@@ -19,10 +19,11 @@
 #'
 #' @export
 fars_read <- function(filename) {
-  if(!file.exists(filename))
+  filename_sys<-system.file("extdata",filename,package = "testpackage")
+  if(!file.exists(filename_sys))
     stop("file '", filename, "' does not exist")
   data <- suppressMessages({
-    readr::read_csv(filename, progress = FALSE)
+    readr::read_csv(filename_sys, progress = FALSE)
   })
   dplyr::tbl_df(data)
 }
@@ -38,12 +39,12 @@ fars_read <- function(filename) {
 #' @return A string with the FARS filename
 #'
 #' @examples
-#' make_filename(2015)
+#' make_filename(2013)
 #'
 #' @export
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("../data/accident_%d.csv.bz2", year)
+  sprintf("accident_%d.csv.bz2", year)
 }
 
 #' @title
@@ -63,7 +64,7 @@ make_filename <- function(year) {
 #' @importFrom magrittr %>%
 #'
 #' @examples
-#' fars_read_years(c(2013,2014,2015))
+#' fars_read_years(c(2013,2014))
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -99,7 +100,7 @@ fars_read_years <- function(years) {
 #'
 #'
 #' @examples
-#' fars_summarize_years(c(2013,2014,2015))
+#' fars_summarize_years(c(2013,2014))
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -130,7 +131,7 @@ fars_summarize_years <- function(years) {
 #' @importFrom graphics points
 #'
 #' @examples
-#' fars_map_state(42,2015)
+#' fars_map_state(42,2013)
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

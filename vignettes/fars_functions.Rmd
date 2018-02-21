@@ -35,14 +35,13 @@ For example to load a far file we can use the fars_read funcion:
 
 ```{r}
 require(testpackage)
-fars_read("../data/accident_2013.csv.bz2")
+fars_read("accident_2013.csv.bz2")
 ```
 
 Summarize the data with the fars_summarize_years function
 
 ```{r}
 require(dplyr)
-
 fars_summarize_years(c("2013"))
 ```
 

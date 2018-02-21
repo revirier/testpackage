@@ -5,7 +5,7 @@ dir=getwd()
 setwd("..")
 
 test_that("load file",{
-  result<-fars_read("../data/accident_2013.csv.bz2")
+  result<-fars_read("accident_2013.csv.bz2")
   expect_that(result, is_a("data.frame"))
   expect_that(dim(result)[2],equals(50))
   expect_gt(dim(result)[1],0)

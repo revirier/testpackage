@@ -4,8 +4,8 @@ Title: Test Package
 Version: 0.1.0
 Author: revirier
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: test package for the Courser Building R p¡Packages Course
-License: CC
+Description: test package for the Courser Building R Packages Course.
+License: MIT + file LICENSE
 Imports: dplyr, magrittr, maps, readr, tidyr
 Encoding: UTF-8
 LazyData: true
