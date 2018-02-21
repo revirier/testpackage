@@ -1,5 +1,8 @@
 # testpackage
 
+[![Travis](https://travis-ci.org/revirier/testpackage.svg?branch=master)]()
+
+
 The goal of testpackage is to learn the use of packages
 
 ## Example
