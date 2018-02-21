@@ -1,6 +1,6 @@
 # testpackage
 
-[![Travis](https://travis-ci.org/revirier/testpackage.svg?branch=master)]()
+[![Build Status](https://travis-ci.org/revirier/testpackage.svg?branch=master)](https://travis-ci.org/revirier/testpackage)
 
 
 The goal of testpackage is to learn the use of packages
